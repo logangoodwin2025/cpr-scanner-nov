@@ -15,6 +15,9 @@ View your app in AI Studio: https://ai.studio/apps/drive/1QuH4kxTs6sQU5i2qohihj9
 
 1. Install dependencies:
    `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
+2. Copy `.env.example` to `.env.local` and set:
+   - `VITE_DHAN_API_KEY` and `VITE_DHAN_API_SECRET` with your Dhan credentials
+   - `VITE_USE_MOCK_MARKET_DATA=true` if you want to run with the built-in mock generator instead of live Dhan data
+   - Any existing keys such as `GEMINI_API_KEY`
 3. Run the app:
    `npm run dev`

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { fetchMarketScannerData, resetDataGenerator } from './services/marketData';
+import { fetchScannerData, resetScannerData } from './services/dhanMarketData';
 import { StockData, FilterCriteria, Timeframe, CPRWidthState, PivotRelationship, Sector, MarketCap } from './types';
 import AnalysisPanel from './components/AnalysisPanel';
 import PivotVisualizer from './components/PivotVisualizer';
@@ -30,11 +30,11 @@ function App() {
     setLoading(true);
     try {
       if (reset) {
-        resetDataGenerator();
+        resetScannerData();
         setStocks([]);
         setTotalLoaded(0);
       }
-      const newStocks = await fetchMarketScannerData(250);
+      const newStocks = await fetchScannerData(250);
       setStocks(prev => reset ? newStocks : [...prev, ...newStocks]);
       setTotalLoaded(prev => reset ? 250 : prev + 250);
     } catch (e) {
