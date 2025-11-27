@@ -1,0 +1,5 @@
+{
+  "name": "PivotBoss AI Scanner",
+  "description": "Real-time CPR and Pivot scanner for professional traders. Detects Narrow CPR, Confluences, and Pivot Boss setups with Gemini AI analysis.",
+  "requestFramePermissions": []
+}
